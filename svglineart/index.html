@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+
+    <style>
+        body {
+            background: rgb(255, 201, 120);
+            margin: 0px;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #hello {
+            width: 50%;
+            height: 50%;
+            fill: none;
+            stroke: rgb(255, 255, 255);
+            stroke-width: 5px;
+            stroke-linejoin: round;
+            stroke-dasharray: 4432;
+            stroke-dashoffset: -4432;
+            animation: write 10s 1s infinite forwards;
+        }
+
+
+        @keyframes write {
+            from {
+                stroke-dashoffset: 4432;
+            }
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+             
+    </style>
+</head>
+<body>
+    <svg id="hello" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1110.5 525.3">
+       
+        <path class="hellosign" d="M3.26,677.73c117.94-88,248.47-202.62,218.33-295.66s-115.8,53.85-68.79,199,44.07,117.12,64.25,155.79c0,0-7.7-115.74,42.64-142.14,30.82-16.17,19.69,163.68,55.19,210.54,19.71,26,10.46-165.13,39.21-193.88s80.3-28.44,65.36-79.33c-14.13-48.13-99.22,12.84-51.75,95.13s114.49-66.85,120.9-74.07,133-206.78,74.06-265.76c-26-26-129.25,211.8-37.57,325.12,26.52,32.78,57.44-76.72,70.79-97.48s137.32-191.18,110-218.49S549,470,622.39,603.83c15.08,27.51,72.11-64.24,120.2-115.64l3.06-19.49S711,626,782.68,641.88s110.62-166.24,51.73-214S727.64,460.57,760.89,478,918.68,416.13,964,439.84s102,21.71,148.12-3.27" transform="translate(-2.36 -283.89)"/></svg>
+ 
+    <script src="script.js"></script>
+</body>
+</html>

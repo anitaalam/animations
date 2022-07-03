@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            background-color: rgb(216, 173, 112);
+            font-family:'Courier New', Courier, monospace;
+            position: relative;
+        }
+
+        .bottom {
+            position: absolute;
+            left: 19vmin;
+            bottom: 19.5vmin;
+        }
+
+        .side {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            bottom: 20.25vmin;
+            left: 7.75vmin;
+        }
+
+        .bottom-block {
+            margin-left: -10px;
+        }
+
+        .block {
+            width: 10vmin;
+        }
+
+        .mario {
+            width: 10vmin;
+            position: absolute;
+            left: 90vmin;
+            bottom: 30.5vmin;
+        }
+
+        .btn {
+            width: 12vmin;
+            height: 25px;
+            margin: 10px;
+            border-radius: 35px;
+            cursor: pointer;
+            background-color:rgb(19, 31, 43);
+            text-align: center;
+            line-height: 25px;
+            color:#fff;
+            font-size: 1.5vmin;
+            user-select: none;
+        }
+
+        .btn:hover {
+            background-color: rgb(68, 86, 104);
+        }
+
+        .control {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 10vmin;
+            left: 0;
+            right: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <img class="mario" src="mario.png">
+    </div>
+    <div class="bottom">
+        <img class="block bottom-block" src="block.png">
+        <img class="block bottom-block" src="block.png">
+        <img class="block bottom-block" src="block.png">
+        <img class="block bottom-block" src="block.png">
+        <img class="block bottom-block" src="block.png">
+        <img class="block bottom-block" src="block.png">
+        <img class="block bottom-block" src="block.png">
+        <img class="block bottom-block" src="block.png">
+    </div>
+    <div class="side">
+        <img class="block left-block" src="block.png">
+        <img class="block left-block" src="block.png">
+        <img class="block left-block" src="block.png">
+        <img class="block left-block" src="block.png">
+        <img class="block left-block" src="block.png">
+    </div>
+    <div class="control">
+        <div class="btn" id="play">Play</div>
+        <div class="btn" id="pause">Pause</div>
+        <div class="btn" id="reverse">Reverse</div>
+        <div class="btn" id="restart">Restart</div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script>
+        // set initial position
+            // gsap.set(".mario",{x:195});
+
+        // animation using timeline
+            var tl = gsap.timeline({paused:true});
+            tl.to(".mario", {x:-490, ease:"linear", duration:3});
+            tl.to(".mario", {rotate:90, ease:"linear", duration:0.5,});
+            tl.to(".mario", {y:-230, ease:"linear", duration:2,});
+            tl.to(".mario", {rotate:110, ease:"linear", duration:0.25,});
+            tl.to(".mario", {rotate:80, ease:"linear", duration:0.25,});
+            tl.to(".mario", {rotate:110, ease:"linear", duration:0.25,});
+            tl.to(".mario", {rotate:80, ease:"linear", duration:0.25,});
+            tl.to(".mario", {x:0, y:0,  ease:"linear", rotate:1080, duration:2,});
+
+        // controller
+            document.querySelector('#play').onclick = function(){tl.play()};
+            document.querySelector('#pause').onclick = function(){tl.pause()};
+            document.querySelector('#reverse').onclick = function(){tl.reverse()};
+            document.querySelector('#restart').onclick = function(){tl.restart()};
+            
+    </script>
+
+</body>
+</html>

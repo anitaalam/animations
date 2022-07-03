@@ -1,0 +1,23 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(182, 182, 212);
+}
+
+#genNew {
+    width: 22vmin;
+    height: 8vmin;
+    color: #000;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #fff;
+    border-radius: 2vmin;
+    border: 1.5px #000 solid;
+    cursor: pointer;
+}
+
+#genNew:hover {
+    transform: scale(1.3);
+}
